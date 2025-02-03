@@ -1,0 +1,50 @@
+//syntax of an if statement
+if(condition 1){
+    //code that'll be run if condition 1 is ture
+}else if(condition 2){
+    //block of code that'll be run instead if condition 2 is true
+}else{
+    if all other conditions are false this code will run instead
+}
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for for loop
+for(expression 1: expression 2; expression 3){
+    code to be repeated until condition is untrue
+}
+
+ex)
+for(let i = 0; i < 5; i++){
+    console.log(i);
+}
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for for of statemet
+loops through all the elements of an iterable object like a list 
+and temporiarly stores them as a unmutable variable
+
+ex)
+for (const element of array1){
+    console.log(elememnt);
+}
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for function
+function name(parameter 1, parameter 2, parameter 3){
+    code to be executed which can call the parameters
+    return (can return anything);
+}
+
+to call a function ( you can also store whatever the function returns into a variable)
+name(argument 1, argument 2, argument 3);
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for while loop
+while(condition1){
+    code that'll run until condition 1 is false
+}
+
