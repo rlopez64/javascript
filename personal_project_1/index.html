@@ -1,4 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> </head>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>RPG - 14 days</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- the game box where everything will be displayed-->
+      <div id="game">
+        <!-- Image row-->
+        <div id="backgroundImg">
+          <!-- <img src="./backgrounds/cave2.jpeg" /> -->
+          <!-- <img src="./backgrounds/forest2.jpg" /> -->
+          <img src="./backgrounds/tavern.jpeg" />
+        </div>
+
+        <!-- First row (wil be hidden at first), it'll show the monster stats-->
+        <div id="monsterStats">
+          <!--Monster Name-->
+          <span class="stat">
+            <strong>Monster Name:</strong>
+            <span id="monsterName"> [placeholder] </span>
+          </span>
+          <!--Monster Health-->
+          <span class="stat">
+            <strong>Monster Health:</strong>
+            <span id="monsterHealth"> [placeholder] </span>
+          </span>
+        </div>
+        <!-- Second row where the button w/the controls will go-->
+        <div id="controls">
+          <button id="button1">Go to the store</button>
+          <button id="button2">Go to cave</button>
+          <button id="button3">Fight dragon</button>
+          <button id="button4">Check Stats</button>
+        </div>
+
+        <!-- Third row where the stats of the character will go-->
+        <div id="stats">
+          <!--XP stat-->
+          <span class="stat">
+            <strong>XP:</strong>
+            <span id="xpText">0</span>
+          </span>
+          <!--Health stat-->
+          <span class="stat">
+            <strong>Health:</strong>
+            <span id="healthText">100</span>
+          </span>
+          <!--Gold stat-->
+          <span class="stat">
+            <strong>Gold:</strong>
+            <span id="goldText">50</span>
+          </span>
+        </div>
+
+        <!-- Fourth row, where the text will be displayed-->
+        <div id="text">
+          >Welcome to Dragon Repeller. You must defeat the dragon that is
+          preventing people from leaving the town. You are in the town square.
+          Where do you want to go? Use the buttons above.
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./script.js"></script>
+  </body>
 </html>

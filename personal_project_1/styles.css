@@ -1,0 +1,86 @@
+body {
+  background-color: black;
+}
+
+#text {
+  background-color: black;
+  color: #3cfc34;
+  padding: 10px;
+}
+
+/* 
+This will affect the border holding all 4 rows
+*/
+#game {
+  max-width: 700px;
+  max-height: 400px;
+  background-color: black;
+  color: #ffffff;
+  /* for margin property you can target 4 sides: 
+  top, right, bottom, left
+
+  in this case it's:
+  top, left&right, bottom
+  */
+  margin: 30px auto 0px;
+  padding: 10px;
+}
+
+/* This will affect row showing character stats & buttons*/
+#controls,
+#stats {
+  /* margin: 10px 10px 10px 0px; */
+  padding: 10px 10px 0px 10px;
+}
+
+/* the background around the buttons*/
+#controls {
+  /* display: flex;
+  justify-content: start; */
+}
+
+#stats {
+  color: #3cfc34;
+}
+
+/* This is the row that will initially be hidden*/
+#monsterStats {
+  /* display: none; */
+  /* border: 1px solid #0a0a23; */
+  padding: 10px;
+  color: black;
+  background-color: #3cfc34;
+}
+
+#monsterStats .stat {
+  display: none;
+}
+
+/* This will control how the text is shown*/
+.stat {
+  padding-right: 10px;
+}
+
+/* This will affect how the buttons are displayed*/
+button {
+  cursor: grab;
+  border: 1px solid black;
+  background-color: #3cfc34;
+  color: black;
+  padding: 5px;
+}
+
+/*This will contain the image */
+#backgroundImg {
+  width: 700px;
+  height: 300px;
+}
+
+img {
+  /* min-width: 100%;
+  max-width: 100%; */
+  /* max-height: 500; */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
