@@ -1,0 +1,156 @@
+linking a javascript file to html 
+//to link a js file to html you want to nest script in the head with an src link
+<script src="./script.js"></script>
+
+the placement of the <script></script> tag
+//if you place the script tag inside the head tag then what'll happen is that the code in javascript will run
+//before it reads through all the code in HTML so document.querySelector won't recognize any buttons bc
+
+WE ALWAYS PLACE OUR SCRIPT <script></script> tag at the END OF THE BODY <body></body> tag
+
+----------------------------------------------------------------------------------------------------------------
+
+connecting javascript with HTML
+//if you want to access html elements in javascript you use: document
+exmaple. let h1 = document.querySelector("h1");
+
+how to find specific html element
+//if you want to find a specific element to interact with you can use .querySelector()
+//it returns the first element that matches the selector
+
+since it takes a CSS selector as an argument you can input things like id and classes 
+example. 
+let x = document.querySelector("#id");
+let x = document.querySelector(".class");
+
+----------------------------------------------------------------------------------------------------------------
+
+deciding what happens with your button
+//all buttons have the onclick property that you can use to program something after the button is pressed
+example
+button.onclick = myFunction;
+
+----------------------------------------------------------------------------------------------------------------
+
+changing actual text in html through javascript
+//you can use innerText to change what a text tag shows
+example
+html: 
+    <p id="info">Example Text</p>
+javascript: 
+    const info = document.querySelector("#info");
+    info.innerText = "Hello World";
+
+so now the <p> text would change from Example Text to > Hello World
+
+----------------------------------------------------------------------------------------------------------------
+
+How to add quotation marks inside a " ". 
+//to add special characters inside a quotation marks just prefix them with \
+example:
+    console.log("i want to put quotation marks around hello, \"hello\"")
+print: 
+    I want to put quotation marks around hello, "hello"
+
+//another way of adding quotation marks "" inside a quotation mark is by 
+//using ' as the outside surrounding quotes and then you don't have to use \ to introduce " 
+
+example:
+    console.log('can i put my "balls" in your jaws')
+output: 
+    can i put my "balls" in your jaws
+
+----------------------------------------------------------------------------------------------------------------
+
+what are and how to use dictionaries
+//w/dictionaries u got a key and a value associated with it
+//key : value
+//in order to initialize one you type
+example:
+    let dictionary = {}
+
+//you can add multiple elements to a dictionary, just seperate them by commas
+example:
+    let dog  = {
+        name = "Spark",
+        age = 4,
+        breed = "Golden retriver"
+    };
+
+//for the key you can also make it multiple words
+//just make sure to use quotation marks for the key
+example
+    let hotdog = {
+        "number of condiments" : 5
+    };
+
+//ways to access the data from the dictionary 
+//you can use the dot notation
+example:
+    console.log(dog.name);
+output: 
+    Spark
+
+//you can also use brackets to access a value
+//just call the name of ur dictionary and type the name of key inside [""], this is required for 
+//keys with multiple words
+example:
+    console.log(hotdog["number of condiments"]);
+output:
+    5
+
+----------------------------------------------------------------------------------------------------------------
+
+adjusting the visibility of an element
+//it's broken down into two steps, first is accessing the inline style of an element, 
+//then you access it's display property to make it show up/disspear
+
+example:
+    const paragraph = document.querySelector('p');
+    paragraph.style.display = 'block';
+
+//this will actually display the element instead of hiding it
+
+----------------------------------------------------------------------------------------------------------------
+
+math functions, randomizers 
+//the math object has a lot of randomizer functions Math.function()
+//you got .random() which generates a number from 0 to 1
+//you also have .floor() which rounds down a number to the nearest integer
+
+//combinng both you can get a number between 1 and 5
+example:
+    Math.floor(Math.random() * 5) + 1;
+output:
+    (random number between 1 & 5), 3
+
+----------------------------------------------------------------------------------------------------------------
+how to make a one line, if else statement
+
+//normally you would make an if else statement like so:
+
+if(money > 200){
+    return "you're not broke";
+}
+else{
+    resturn "damn dude you're broke";
+}
+
+//you can actually shorten it down to:
+
+return money > 200 ? "you're not broke" : "damn dude you're broke"
+
+----------------------------------------------------------------------------------------------------------------
+checking if an array contains a specific element
+
+//you can use the .includes() function to check in an array contains a speciic element
+//if it does the function will return true and false if not
+
+example:
+
+const numbersArray = [1, 2, 3, 4, 5];
+const number = 3;
+
+if(numbersArray.includes(number)){
+    console.log("The number is in the array);
+}

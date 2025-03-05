@@ -21,7 +21,7 @@ for(let i = 0; i < 5; i++){
 
 ----------------------------------------------------------------------------------------------------------------
 
-//syntax for for of statemet
+//syntax, for of loop
 loops through all the elements of an iterable object like a list 
 and temporiarly stores them as a unmutable variable
 
@@ -47,4 +47,40 @@ name(argument 1, argument 2, argument 3);
 while(condition1){
     code that'll run until condition 1 is false
 }
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for unshift
+works just like push but adds new element to front of the list instead
+
+ex
+const number = [1, 2, 3] 
+number.unshift(5);
+
+new numbers array: [5, 1, 2, 3]
+
+unshift returns the size of the new array with the value added
+const unshifted = numbers.unshift(5);
+
+//unshifted = 5
+
+----------------------------------------------------------------------------------------------------------------
+
+//syntax for shift
+does the same as pop but instead of removing last added element, it removes 
+element at start of list
+
+const numbers = [1, 2, 3, 4];
+numbers.shift();
+
+//numbers array is now 
+[2, 3, 4]
+
+//if you store the return value of shift(), it'll have the value that just got 
+//removed from the list
+const shifted = numbers.shift();
+
+
+//shifted = 2
+
 
