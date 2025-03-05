@@ -34,10 +34,8 @@ This will affect the border holding all 4 rows
 }
 
 /* the background around the buttons*/
-#controls {
-  /* display: flex;
-  justify-content: start; */
-}
+/* #controls {
+} */
 
 #stats {
   color: #3cfc34;
