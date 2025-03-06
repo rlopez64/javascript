@@ -12,9 +12,7 @@
       <div id="game">
         <!-- Image row-->
         <div id="backgroundImg">
-          <!-- <img src="./backgrounds/cave2.jpeg" /> -->
-          <!-- <img src="./backgrounds/forest2.jpg" /> -->
-          <img src="./backgrounds/tavern.jpeg" />
+          <img src="./backgrounds/maplestory/ice_background.jpg" />
         </div>
 
         <!-- First row (wil be hidden at first), it'll show the monster stats-->
@@ -32,10 +30,12 @@
         </div>
         <!-- Second row where the button w/the controls will go-->
         <div id="controls">
-          <button id="button1">Go to the store</button>
+          <button id="button1">Go to store</button>
           <button id="button2">Go to cave</button>
-          <button id="button3">Fight dragon</button>
-          <button id="button4">Check Stats</button>
+          <button id="button3">Go to Infirmary</button>
+          <button id="button4">Go to Lodge</button>
+          <button id="button5">Go to Combat Trial</button>
+          <button id="button6">Check Stats</button>
         </div>
 
         <!-- Third row where the stats of the character will go-->
@@ -43,25 +43,49 @@
           <!--XP stat-->
           <span class="stat">
             <strong>XP:</strong>
-            <span id="xpText">0</span>
+            <span id="xpText">0/20</span>
+          </span>
+          <!--Class stat-->
+          <span class="stat">
+            <strong>Class:</strong>
+            <span id="classText">Penguin chick</span>
           </span>
           <!--Health stat-->
           <span class="stat">
             <strong>Health:</strong>
-            <span id="healthText">100</span>
+            <span id="healthText">100/100</span>
           </span>
-          <!--Gold stat-->
+          <!--Fish stat-->
           <span class="stat">
-            <strong>Gold:</strong>
-            <span id="goldText">50</span>
+            <strong>Fish:</strong>
+            <span id="fishText">8</span>
+          </span>
+          <!--Day stat-->
+          <span class="stat">
+            <strong>Day:</strong>
+            <span id="dayText">1</span>
           </span>
         </div>
 
         <!-- Fourth row, where the text will be displayed-->
-        <div id="text">
-          >Welcome to Dragon Repeller. You must defeat the dragon that is
-          preventing people from leaving the town. You are in the town square.
-          Where do you want to go? Use the buttons above.
+        <div id="textbox">
+          <p id="text">
+            >The icy winds howl across the frozen tundra, but you don't have
+            time to admire the view. A challenge looms ahead. In 14 days, you'll
+            face <strong>The Overlord</strong>, a ruthless tyrant who has ruled
+            these lands with an iron beak for far too long. Currently in a deep
+            slumber, once he wakes he'll rampage your home. If you fail to
+            defeat him your friends and family will perish. <br /><br />
+            >With determination in your heart and only a few fishes to your
+            name, you must train, gather strong gear and grow stronger before
+            the final battle. <br /><br />
+            >Taking into account your limited time will you brave the
+            <strong>dark caves</strong> for hidden treasure? Will you endure
+            <strong>combat trials</strong> to sharpen your skills? Will you
+            visit the <strong>store</strong> to prepare, or rest at the
+            <strong>lodge</strong> to regain your strength? <br /><br />
+            >The clock is ticking. <strong>Your journey begins now.</strong>
+          </p>
         </div>
       </div>
     </main>

@@ -2,7 +2,7 @@ body {
   background-color: black;
 }
 
-#text {
+#textbox {
   background-color: black;
   color: #3cfc34;
   padding: 10px;
@@ -66,6 +66,10 @@ button {
   background-color: #3cfc34;
   color: black;
   padding: 5px;
+}
+
+p {
+  margin-top: 0px;
 }
 
 /*This will contain the image */
