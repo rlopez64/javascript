@@ -11,8 +11,11 @@
       <!-- the game box where everything will be displayed-->
       <div id="game">
         <!-- Image row-->
-        <div id="backgroundImg">
-          <img src="./backgrounds/maplestory/ice_background.jpg" />
+        <div id="imgBorder">
+          <img
+            id="backgroundImg"
+            src="./backgrounds/maplestory/ice_background.jpg"
+          />
         </div>
 
         <!-- First row (wil be hidden at first), it'll show the monster stats-->
@@ -30,12 +33,12 @@
         </div>
         <!-- Second row where the button w/the controls will go-->
         <div id="controls">
-          <button id="button1">Go to store</button>
-          <button id="button2">Go to cave</button>
-          <button id="button3">Go to Infirmary</button>
-          <button id="button4">Go to Lodge</button>
-          <button id="button5">Go to Combat Trial</button>
-          <button id="button6">Check Stats</button>
+          <button id="button1">Go to Town Square</button>
+          <button id="button2"></button>
+          <button id="button3"></button>
+          <button id="button4"></button>
+          <button id="button5"></button>
+          <button id="button6"></button>
         </div>
 
         <!-- Third row where the stats of the character will go-->
@@ -49,6 +52,11 @@
           <span class="stat">
             <strong>Class:</strong>
             <span id="classText">Penguin chick</span>
+          </span>
+          <!--Weapon stat-->
+          <span class="stat">
+            <strong>Weapon:</strong>
+            <span id="weaponText">Pebble</span>
           </span>
           <!--Health stat-->
           <span class="stat">

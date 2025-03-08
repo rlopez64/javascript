@@ -61,7 +61,7 @@ This will affect the border holding all 4 rows
 
 /* This will affect how the buttons are displayed*/
 button {
-  cursor: grab;
+  cursor: pointer;
   border: 1px solid black;
   background-color: #3cfc34;
   color: black;
@@ -73,7 +73,7 @@ p {
 }
 
 /*This will contain the image */
-#backgroundImg {
+#imgBorder {
   width: 700px;
   height: 300px;
 }
@@ -85,4 +85,28 @@ img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+#backgroundImg {
+  object-position: center bottom;
+}
+
+#button2 {
+  display: none;
+}
+
+#button3 {
+  display: none;
+}
+
+#button4 {
+  display: none;
+}
+
+#button5 {
+  display: none;
+}
+
+#button6 {
+  display: none;
 }
