@@ -7,29 +7,7 @@ let fish = 8;
 
 //weapons
 let currentWeapon = 0;
-let inventory = [
-  {
-    name: "Pebble",
-    power: 2,
-    cost: 0,
-    description:
-      "A small, smooth stone that fits perfectly in your flipper." +
-      "It’s not much, but with enough determination (or a good throw), it might just leave a mark.",
-  },
-  {
-    name: "Driftwood Club",
-    power: 4,
-    cost: 5,
-    description:
-      "A sturdy piece of driftwood. Not fancy, but it gets the job done.",
-  },
-  {
-    name: "Icicle Dagger",
-    power: 8,
-    cost: 10,
-    description: "A lightweight dagger with a chilling edge. Fast but fragile.",
-  },
-];
+let inventory = ["Pebble"];
 
 let day = 1;
 
@@ -47,23 +25,11 @@ const button4 = document.querySelector("#button4");
 const button5 = document.querySelector("#button5");
 const button6 = document.querySelector("#button6");
 
-/* list of all weapons*/
-const weapons_available = [
-  {
-    name: "Driftwood Club",
-    power: 2,
-    cost: 5,
-    description:
-      "A sturdy piece of driftwood. Not fancy, but it gets the job done.",
-  },
-];
-
 /* Connecting the changing text*/
 //personal stats
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
 const classText = document.querySelector("#classText");
-const weaponText = document.querySelector("#weaponText");
 const healthText = document.querySelector("#healthText");
 const fishText = document.querySelector("#fishText");
 const dayText = document.querySelector("#dayText");
@@ -74,12 +40,18 @@ const monsterName = document.querySelector("#monsterName");
 const monsterHealth = document.querySelector("#monsterHealth");
 
 /* initializing the buttons*/
-button1.onclick = enterTown;
+button1.onclick = goStore;
+button2.onclick = goCave;
+button3.onclick = goInfirmary;
+button4.onclick = goLodge;
+button5.onclick = goCombatTrial;
+button6.onclick = goStats;
 
 /* total stats */
 const totalStats = {
   totalFish: 8,
   totalXP: 0,
+  "current equipment": inventory[currentWeapon],
   "total enemy1 killed": 0,
   "total enemy2 killed": 0,
   "total enemy3 killed": 0,
@@ -90,20 +62,24 @@ const totalStats = {
 /* different locations taken based on button */
 const locations = [
   {
-    name: "go to town square",
-    "num of buttons": 3,
-    "button text": ["Go to Store", "Go to cave", "Check Status"],
-    "button functions": [goStore, goCave, goStats],
-    text:
-      ">You waddle into the bustling heart of town, where penguins of all kinds gather. " +
-      "\n>A faint chill lingers in the air, but the warmth of lively chatter and flickering lanterns makes it feel welcoming",
-    "background image": ["./backgrounds/maplestory/village.jpeg"],
-  },
-  {
     name: "town square",
-    "num of buttons": 3,
-    "button text": ["Go to Store", "Go to cave", "Check Status"],
-    "button functions": [goStore, goCave, goStats],
+    "num of buttons": 6,
+    "button text": [
+      "Go to Store",
+      "Go to cave",
+      "Go to Infirmary",
+      "Go to Lodge",
+      "Go to Combat Trial",
+      "Check Status",
+    ],
+    "button functions": [
+      goStore,
+      goCave,
+      goInfirmary,
+      goLodge,
+      goCombatTrial,
+      goStats,
+    ],
     text: ">It's daytime. You find yourself at the town square, what will you do?",
     "background image": ["./backgrounds/maplestory/village.jpeg"],
   },
@@ -132,17 +108,6 @@ const locations = [
       ">You scan the store’s shelves, stocked with useful supplies for a penguin preparing for battle. The shopkeeper flaps over, eager to make a sale." +
       '\n>"Everything here will help you on your journey. What’ll it be?"',
     "background image": ["./backgrounds/maplestory/tavern.jpg"],
-  },
-  {
-    name: "weapons menu",
-    "num of buttons": 3,
-    "button text": ["Driftwood Club", "Icicle Dagger", "Return"],
-    "button functions": [buyweapon1, buyweapon2, buyItem],
-    text:
-      ">The shopkeeper waddles over to a sturdy wooden rack, displaying an assortment of finely crafted weapons. " +
-      '\n>"Ah, looking to pack a punch, are we? Choose wisely—your next battle may depend on it!"' +
-      "\n\n[Available Weapons]",
-    "background image": ["./backgrounds/maplestory/smithery.jpeg"],
   },
   {
     name: "stats menu",
@@ -178,7 +143,7 @@ function update(location) {
 
 /* button functions*/
 function goStore() {
-  update(locations[2]);
+  update(locations[1]);
 }
 
 function goCave() {
@@ -198,18 +163,10 @@ function goCombatTrial() {
 }
 
 function goStats() {
-  update(locations[5]);
+  update(locations[3]);
   text.innerText += "\n>Total fish earned: " + totalStats["totalFish"];
   text.innerText += "\n>Total XP earned: " + totalStats["totalXP"];
-  text.innerText +=
-    "\n>Current Equipment: " +
-    inventory[currentWeapon].name +
-    "(Damage: " +
-    inventory[currentWeapon].power +
-    ")" +
-    "\n(" +
-    inventory[currentWeapon].description +
-    ")";
+  text.innerText += "\n>Current Equipment: " + totalStats["current equipment"];
   text.innerText +=
     "\n>Total " + " enemy 1 " + "killed: " + totalStats["total enemy1 killed"];
   text.innerText +=
@@ -218,47 +175,18 @@ function goStats() {
     "\n>Total " + " enemy 3 " + "killed: " + totalStats["total enemy3 killed"];
 }
 
-function enterTown() {
+function goTown() {
   update(locations[0]);
 }
 
-function goTown() {
-  update(locations[1]);
-}
-
 function buyItem() {
-  update(locations[3]);
+  update(locations[2]);
 }
 
 function sellItem() {}
 
-/* function for weapons menu*/
-function buyWeapon() {
-  update(locations[4]);
-  displayWeapons();
-}
-
-/* function to display every weapon available*/
-function displayWeapons() {
-  for (let i = 1; i < inventory.length; i++) {
-    text.innerText +=
-      "\n>" +
-      inventory[i].name +
-      "(Cost: " +
-      inventory[i].cost +
-      " Gold" +
-      ", Damage: " +
-      inventory[i].power +
-      ")" +
-      " - " +
-      inventory[i].description;
-  }
-}
+function buyWeapon() {}
 
 function buyBread() {}
 
 function buyGlowFish() {}
-
-function buyweapon1() {}
-
-function buyweapon2() {}
